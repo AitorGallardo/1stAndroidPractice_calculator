@@ -8,7 +8,7 @@
     tools:layout_editor_absoluteY="25dp">
 
     <LinearLayout
-        android:id="@+id/input/output data"
+        android:id="@+id/input_output_data"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -23,14 +23,13 @@
         app:layout_constraintStart_toStartOf="@+id/linearLayout2"
         app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/editText"
+        <TextView
+            android:id="@+id/resultat"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:ems="10"
-            android:inputType="number"
-            android:text="Insert a number" />
+            android:textStyle="bold"
+            android:textSize="50dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -56,7 +55,7 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/numeros/operacions"
+                android:id="@+id/numeros_operacions"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
@@ -69,7 +68,7 @@
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:id="@+id/789"
+                        android:id="@+id/n789"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -96,7 +95,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/456"
+                        android:id="@+id/n456"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -126,7 +125,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/123"
+                        android:id="@+id/n123"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -156,7 +155,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/0"
+                        android:id="@+id/n0"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -172,7 +171,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/resultat"
+                        android:id="@+id/resultLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
