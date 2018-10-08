@@ -9,21 +9,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener  {
 
-    Button buttonN1;
-    Button buttonN2;
-    Button buttonN3;
-    Button buttonN4;
-    Button buttonN5;
-    Button buttonN6;
-    Button buttonN7;
-    Button buttonN8;
-    Button buttonN9;
-    Button buttonN0;
-    Button buttonSuma;
-    Button buttonResta;
-    Button buttonMultiplicacio;
-    Button buttonDivisio;
-    Button buttonResultat;
+    Button buttonN1, buttonN2, buttonN3, buttonN4, buttonN5, buttonN6, buttonN7, buttonN8, buttonN9, buttonN0;
+    Button buttonSuma, buttonResta, buttonMultiplicacio, buttonDivisio, buttonResultat, buttonCE;
     TextView viewResultat;
 
     public String resultatConcatenat="";
@@ -54,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonDivisio = (Button) findViewById(R.id.buttonDivisio);
         buttonMultiplicacio = (Button) findViewById(R.id.buttonMultiplicacio);
         buttonResultat = (Button) findViewById(R.id.buttonResultat);
+        buttonCE = (Button) findViewById(R.id.buttonCE);
 
         viewResultat = (TextView) findViewById(R.id.resultat);
 
@@ -73,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonMultiplicacio.setOnClickListener(this);
         buttonMultiplicacio.setOnClickListener(this);
         buttonResultat.setOnClickListener(this);
+        buttonCE.setOnClickListener(this);
 
 
     }
@@ -170,6 +159,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.buttonResultat: viewResultat.setText(resultat());
                 break;
+            case R.id.buttonCE: {
+                resultatDeLaOperacio = "";
+                viewResultat.setText(resultatDeLaOperacio);
+            }
+            break;
 
 
         }
