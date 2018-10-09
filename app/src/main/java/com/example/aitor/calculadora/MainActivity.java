@@ -7,19 +7,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener  {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button buttonN1, buttonN2, buttonN3, buttonN4, buttonN5, buttonN6, buttonN7, buttonN8, buttonN9, buttonN0;
     Button buttonSuma, buttonResta, buttonMultiplicacio, buttonDivisio, buttonResultat, buttonCE;
     TextView viewResultat;
 
-    public String resultatConcatenat="";
-    public String resultatConcatenat2="";
+    public String resultatConcatenat = "";
+    public String resultatConcatenat2 = "";
     boolean operating = false;
     public String operationType = "";
-    String resultatDeLaOperacio="";
+    String resultatDeLaOperacio = "";
     Double operadorAuxiliar;
-
 
 
     @Override
@@ -69,9 +68,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch( v.getId()){
+        switch (v.getId()) {
             case R.id.buttonN1: {
-                if(operating){
+                if (operating) {
                     viewResultat.setText(resultatConcatenat2 += "1");
                 } else {
                     viewResultat.setText(resultatDeLaOperacio += "1");
@@ -79,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             break;
             case R.id.buttonN2: {
-                if(operating){
+                if (operating) {
                     viewResultat.setText(resultatConcatenat2 += "2");
                 } else {
                     viewResultat.setText(resultatDeLaOperacio += "2");
@@ -87,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             break;
             case R.id.buttonN3: {
-                if(operating){
+                if (operating) {
                     viewResultat.setText(resultatConcatenat2 += "3");
                 } else {
                     viewResultat.setText(resultatDeLaOperacio += "3");
@@ -95,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             break;
             case R.id.buttonN4: {
-                if(operating){
+                if (operating) {
                     viewResultat.setText(resultatConcatenat2 += "4");
                 } else {
                     viewResultat.setText(resultatDeLaOperacio += "4");
@@ -103,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             break;
             case R.id.buttonN5: {
-                if(operating){
+                if (operating) {
                     viewResultat.setText(resultatConcatenat2 += "5");
                 } else {
                     viewResultat.setText(resultatDeLaOperacio += "5");
@@ -111,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             break;
             case R.id.buttonN6: {
-                if(operating){
+                if (operating) {
                     viewResultat.setText(resultatConcatenat2 += "6");
                 } else {
                     viewResultat.setText(resultatDeLaOperacio += "6");
@@ -119,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             break;
             case R.id.buttonN7: {
-                if(operating){
+                if (operating) {
                     viewResultat.setText(resultatConcatenat2 += "7");
                 } else {
                     viewResultat.setText(resultatDeLaOperacio += "7");
@@ -127,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             break;
             case R.id.buttonN8: {
-                if(operating){
+                if (operating) {
                     viewResultat.setText(resultatConcatenat2 += "8");
                 } else {
                     viewResultat.setText(resultatDeLaOperacio += "8");
@@ -135,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             break;
             case R.id.buttonN9: {
-                if(operating){
+                if (operating) {
                     viewResultat.setText(resultatConcatenat2 += "9");
                 } else {
                     viewResultat.setText(resultatDeLaOperacio += "9");
@@ -143,22 +142,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             break;
             case R.id.buttonN0: {
-                if(operating){
+                if (operating) {
                     viewResultat.setText(resultatConcatenat2 += "0");
                 } else {
                     viewResultat.setText(resultatDeLaOperacio += "0");
                 }
             }
             break;
-            case R.id.buttonSuma: suma();
+            case R.id.buttonSuma:
+                suma();
                 break;
-            case R.id.buttonResta: resta();
+            case R.id.buttonResta:
+                resta();
                 break;
-            case R.id.buttonMultiplicacio: multiplicacio();
+            case R.id.buttonMultiplicacio:
+                multiplicacio();
                 break;
-            case R.id.buttonDivisio: divisio();
+            case R.id.buttonDivisio:
+                divisio();
                 break;
-            case R.id.buttonResultat: viewResultat.setText(resultat());
+            case R.id.buttonResultat:
+                viewResultat.setText(resultat());
                 break;
             case R.id.buttonCE: {
                 resultatDeLaOperacio = "";
@@ -172,58 +176,78 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     void suma() {
-        operating=true;
-        operationType="suma";
-        if(viewResultat.getText()!= ""){
+
+        if(resultatDeLaOperacio!=""){
+            operating = true;
+            operationType = "suma";
+        }
+
+        if (viewResultat.getText() != "") {
+            resultatConcatenat2 = "";
             viewResultat.setText("");
+        }else {
+            operations();
         }
     }
+
     void resta() {
-        operating=true;
-        operationType="resta";
-        if(viewResultat.getText()!= ""){
+        operating = true;
+        operationType = "resta";
+        if (viewResultat.getText() != "") {
+            resultatConcatenat2 = "";
             viewResultat.setText("");
+        }else {
+            operations();
         }
     }
+
     void multiplicacio() {
-        operating=true;
-        operationType="multiplicacio";
-        if(viewResultat.getText()!= ""){
+        operating = true;
+        operationType = "multiplicacio";
+        if (viewResultat.getText() != "") {
+            resultatConcatenat2 = "";
             viewResultat.setText("");
+        }else {
+            operations();
         }
     }
+
     void divisio() {
-        operating=true;
-        operationType="divisio";
-        if(viewResultat.getText()!= ""){
+        operating = true;
+        operationType = "divisio";
+        if (viewResultat.getText() != "") {
+            resultatConcatenat2 = "";
             viewResultat.setText("");
+        } else {
+            operations();
         }
     }
+
     String resultat() {
 
-        if(operating){
-            switch(operationType){
+        if (operating) {
+            switch (operationType) {
                 case "suma": {
                     operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) + Double.parseDouble(resultatConcatenat2);
-                    if (operadorAuxiliar - Math.floor(operadorAuxiliar)!=0) {
+                    if (operadorAuxiliar - Math.floor(operadorAuxiliar) != 0) {
                         resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
                     } else {
                         resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
                     }
                 }
-                    break;
+                break;
                 case "resta": {
                     operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) - Double.parseDouble(resultatConcatenat2);
-                    if (operadorAuxiliar - Math.floor(operadorAuxiliar)!=0) {
+                    if (operadorAuxiliar - Math.floor(operadorAuxiliar) != 0) {
                         resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
                     } else {
                         resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
                     }
                 }
-                    break;
+                break;
                 case "multiplicacio": {
                     operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) * Double.parseDouble(resultatConcatenat2);
-                    if (operadorAuxiliar - Math.floor(operadorAuxiliar)!=0) {
+                    if (operadorAuxiliar - Math.floor(operadorAuxiliar) != 0) {
                         resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
                     } else {
                         resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
@@ -240,7 +264,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             }
-            operating=false;
+            operating = false;
             resultatConcatenat2 = "";
             return resultatDeLaOperacio;
         } else {
@@ -248,4 +272,48 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    void operations() {
+
+        if (operating) {
+            switch (operationType) {
+                case "suma": {
+                    operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) + Double.parseDouble(resultatConcatenat2);
+                    if (operadorAuxiliar - Math.floor(operadorAuxiliar) != 0) {
+                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
+                    } else {
+                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
+                    }
+                }
+                break;
+                case "resta": {
+                    operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) - Double.parseDouble(resultatConcatenat2);
+                    if (operadorAuxiliar - Math.floor(operadorAuxiliar) != 0) {
+                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
+                    } else {
+                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
+                    }
+                }
+                break;
+                case "multiplicacio": {
+                    operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) * Double.parseDouble(resultatConcatenat2);
+                    if (operadorAuxiliar - Math.floor(operadorAuxiliar) != 0) {
+                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
+                    } else {
+                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
+                    }
+                }
+                break;
+                case "divisio": {
+                    operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) / Double.parseDouble(resultatConcatenat2);
+                    if (operadorAuxiliar - Math.floor(operadorAuxiliar) != 0) {
+                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
+                    } else {
+                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
+                    }
+                }
+                break;
+            }
+        }
+
+    }
 }
