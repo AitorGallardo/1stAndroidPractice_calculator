@@ -9,16 +9,18 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button buttonN1, buttonN2, buttonN3, buttonN4, buttonN5, buttonN6, buttonN7, buttonN8, buttonN9, buttonN0;
-    Button buttonSuma, buttonResta, buttonMultiplicacio, buttonDivisio, buttonResultat, buttonCE;
-    TextView viewResultat;
+    static Button buttonN1, buttonN2, buttonN3, buttonN4, buttonN5, buttonN6, buttonN7, buttonN8, buttonN9, buttonN0;
+    static Button buttonSuma, buttonResta, buttonMultiplicacio, buttonDivisio, buttonResultat, buttonCE;
+    static TextView viewResultat;
 
-    public String resultatConcatenat = "";
-    public String resultatConcatenat2 = "";
-    boolean operating = false;
-    public String operationType = "";
-    String resultatDeLaOperacio = "";
-    Double operadorAuxiliar;
+    static String resultatConcatenat = "";
+    static String resultatConcatenat2 = "";
+    static boolean operating = false;
+    static String operationType = "";
+    static String resultatDeLaOperacio = "";
+    static Double operadorAuxiliar;
+
+    Operations calcule = new Operations();
 
 
     @Override
@@ -150,23 +152,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             break;
             case R.id.buttonSuma:
-                suma();
+                calcule.suma();
                 break;
             case R.id.buttonResta:
-                resta();
+                calcule.resta();
                 break;
             case R.id.buttonMultiplicacio:
-                multiplicacio();
+                calcule.multiplicacio();
                 break;
             case R.id.buttonDivisio:
-                divisio();
+                calcule.divisio();
                 break;
-            case R.id.buttonResultat:
-                viewResultat.setText(resultat());
-                break;
+            // case R.id.buttonResultat:
+               //  viewResultat.setText(calcule.resultat());
+                // break;
             case R.id.buttonCE: {
-                resultatDeLaOperacio = "";
-                resultatConcatenat2 = "";
+                resultatDeLaOperacio = null;
+                resultatConcatenat2 = null;
                 viewResultat.setText(resultatDeLaOperacio);
             }
             break;
@@ -175,145 +177,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    void suma() {
 
-        if(resultatDeLaOperacio!=""){
-            operating = true;
-            operationType = "suma";
-        }
-
-        if (viewResultat.getText() != "") {
-            resultatConcatenat2 = "";
-            viewResultat.setText("");
-        }else {
-            operations();
-        }
-    }
-
-    void resta() {
-        operating = true;
-        operationType = "resta";
-        if (viewResultat.getText() != "") {
-            resultatConcatenat2 = "";
-            viewResultat.setText("");
-        }else {
-            operations();
-        }
-    }
-
-    void multiplicacio() {
-        operating = true;
-        operationType = "multiplicacio";
-        if (viewResultat.getText() != "") {
-            resultatConcatenat2 = "";
-            viewResultat.setText("");
-        }else {
-            operations();
-        }
-    }
-
-    void divisio() {
-        operating = true;
-        operationType = "divisio";
-        if (viewResultat.getText() != "") {
-            resultatConcatenat2 = "";
-            viewResultat.setText("");
-        } else {
-            operations();
-        }
-    }
-
-    String resultat() {
-
-        if (operating) {
-            switch (operationType) {
-                case "suma": {
-                    operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) + Double.parseDouble(resultatConcatenat2);
-                    if (operadorAuxiliar - Math.floor(operadorAuxiliar) != 0) {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
-                    } else {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
-                    }
-                }
-                break;
-                case "resta": {
-                    operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) - Double.parseDouble(resultatConcatenat2);
-                    if (operadorAuxiliar - Math.floor(operadorAuxiliar) != 0) {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
-                    } else {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
-                    }
-                }
-                break;
-                case "multiplicacio": {
-                    operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) * Double.parseDouble(resultatConcatenat2);
-                    if (operadorAuxiliar - Math.floor(operadorAuxiliar) != 0) {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
-                    } else {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
-                    }
-                }
-                break;
-                case "divisio": {
-                    operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) / Double.parseDouble(resultatConcatenat2);
-                    if (operadorAuxiliar - Math.floor(operadorAuxiliar) != 0) {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
-                    } else {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
-                    }
-                }
-                break;
-            }
-            operating = false;
-            resultatConcatenat2 = "";
-            return resultatDeLaOperacio;
-        } else {
-            return resultatConcatenat;
-        }
-    }
-
-    void operations() {
-
-        if (operating) {
-            switch (operationType) {
-                case "suma": {
-                    operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) + Double.parseDouble(resultatConcatenat2);
-                    if (operadorAuxiliar - Math.floor(operadorAuxiliar) != 0) {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
-                    } else {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
-                    }
-                }
-                break;
-                case "resta": {
-                    operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) - Double.parseDouble(resultatConcatenat2);
-                    if (operadorAuxiliar - Math.floor(operadorAuxiliar) != 0) {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
-                    } else {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
-                    }
-                }
-                break;
-                case "multiplicacio": {
-                    operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) * Double.parseDouble(resultatConcatenat2);
-                    if (operadorAuxiliar - Math.floor(operadorAuxiliar) != 0) {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
-                    } else {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
-                    }
-                }
-                break;
-                case "divisio": {
-                    operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) / Double.parseDouble(resultatConcatenat2);
-                    if (operadorAuxiliar - Math.floor(operadorAuxiliar) != 0) {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
-                    } else {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
-                    }
-                }
-                break;
-            }
-        }
-
-    }
 }

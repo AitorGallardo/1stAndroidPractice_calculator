@@ -1,16 +1,17 @@
 package com.example.aitor.calculadora;
 
 
+import static com.example.aitor.calculadora.MainActivity.*;
+
 public class Operations {
 
 
-		MainActivity layoutElements;
+		// MainActivity layoutElements;
 				
-		Operations(MainActivity theLayoutElements;) {
+		// Operations(MainActivity theLayoutElements;) {
 
-			this.layoutElements = theLayoutElements;
-
-		}
+		// 	this.layoutElements = theLayoutElements;
+		// }
 
     void checkOperation(){
 
@@ -74,7 +75,7 @@ public class Operations {
         }
     }
 
-    String resultat() {
+/*    String resultat() {
 
         if (operating) {
             switch (operationType) {
@@ -85,7 +86,7 @@ public class Operations {
                     } else {
                         resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
                     }
-                    operating = null;
+                    operationType = null;
                 }
                 break;
                 case "resta": {
@@ -95,7 +96,7 @@ public class Operations {
                     } else {
                         resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
                     }
-                    operating = null;
+                    operationType = null;
                 }
                 break;
                 case "multiplicacio": {
@@ -105,7 +106,7 @@ public class Operations {
                     } else {
                         resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
                     }
-                    operating = null;
+                    operationType = null;
                 }
                 break;
                 case "divisio": {
@@ -115,7 +116,7 @@ public class Operations {
                     } else {
                         resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
                     }
-                    operating = null;
+                    operationType = null;
                 }
                 break;
             }
@@ -125,7 +126,7 @@ public class Operations {
         } else {
             return resultatConcatenat;
         }
-    }
+    }*/
 
     void operador() {
 
@@ -138,7 +139,7 @@ public class Operations {
                     } else {
                         resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
                     }
-                    operating = null;
+                    operationType = null;
                 }
                 break;
                 case "resta": {
@@ -148,7 +149,7 @@ public class Operations {
                     } else {
                         resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
                     }
-                    operating = null;
+                    operationType = null;
                 }
                 break;
                 case "multiplicacio": {
@@ -158,7 +159,7 @@ public class Operations {
                     } else {
                         resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
                     }
-                    operating = null;
+                    operationType = null;
                 }
                 break;
                 case "divisio": {
@@ -168,7 +169,7 @@ public class Operations {
                     } else {
                         resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
                     }
-                    operating = null;
+                    operationType = null;
                 }
                 break;
             }
