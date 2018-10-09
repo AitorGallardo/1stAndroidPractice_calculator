@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     boolean operating = false;
     public String operationType = "";
     String resultatDeLaOperacio="";
+    Double operadorAuxiliar;
 
 
 
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(operating){
                     viewResultat.setText(resultatConcatenat2 += "1");
                 } else {
-                    viewResultat.setText(resultatConcatenat += "1");
+                    viewResultat.setText(resultatDeLaOperacio += "1");
                 }
             }
             break;
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(operating){
                     viewResultat.setText(resultatConcatenat2 += "2");
                 } else {
-                    viewResultat.setText(resultatConcatenat += "2");
+                    viewResultat.setText(resultatDeLaOperacio += "2");
                 }
             }
             break;
@@ -89,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(operating){
                     viewResultat.setText(resultatConcatenat2 += "3");
                 } else {
-                    viewResultat.setText(resultatConcatenat += "3");
+                    viewResultat.setText(resultatDeLaOperacio += "3");
                 }
             }
             break;
@@ -97,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(operating){
                     viewResultat.setText(resultatConcatenat2 += "4");
                 } else {
-                    viewResultat.setText(resultatConcatenat += "4");
+                    viewResultat.setText(resultatDeLaOperacio += "4");
                 }
             }
             break;
@@ -105,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(operating){
                     viewResultat.setText(resultatConcatenat2 += "5");
                 } else {
-                    viewResultat.setText(resultatConcatenat += "5");
+                    viewResultat.setText(resultatDeLaOperacio += "5");
                 }
             }
             break;
@@ -113,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(operating){
                     viewResultat.setText(resultatConcatenat2 += "6");
                 } else {
-                    viewResultat.setText(resultatConcatenat += "6");
+                    viewResultat.setText(resultatDeLaOperacio += "6");
                 }
             }
             break;
@@ -121,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(operating){
                     viewResultat.setText(resultatConcatenat2 += "7");
                 } else {
-                    viewResultat.setText(resultatConcatenat += "7");
+                    viewResultat.setText(resultatDeLaOperacio += "7");
                 }
             }
             break;
@@ -129,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(operating){
                     viewResultat.setText(resultatConcatenat2 += "8");
                 } else {
-                    viewResultat.setText(resultatConcatenat += "8");
+                    viewResultat.setText(resultatDeLaOperacio += "8");
                 }
             }
             break;
@@ -137,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(operating){
                     viewResultat.setText(resultatConcatenat2 += "9");
                 } else {
-                    viewResultat.setText(resultatConcatenat += "9");
+                    viewResultat.setText(resultatDeLaOperacio += "9");
                 }
             }
             break;
@@ -145,7 +146,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(operating){
                     viewResultat.setText(resultatConcatenat2 += "0");
                 } else {
-                    viewResultat.setText(resultatConcatenat += "0");
+                    viewResultat.setText(resultatDeLaOperacio += "0");
                 }
             }
             break;
@@ -161,6 +162,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.buttonCE: {
                 resultatDeLaOperacio = "";
+                resultatConcatenat2 = "";
                 viewResultat.setText(resultatDeLaOperacio);
             }
             break;
@@ -172,37 +174,74 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     void suma() {
         operating=true;
         operationType="suma";
-        viewResultat.setText("");
+        if(viewResultat.getText()!= ""){
+            viewResultat.setText("");
+        }
     }
     void resta() {
         operating=true;
         operationType="resta";
-        viewResultat.setText("");
+        if(viewResultat.getText()!= ""){
+            viewResultat.setText("");
+        }
     }
     void multiplicacio() {
         operating=true;
         operationType="multiplicacio";
-        viewResultat.setText("");
+        if(viewResultat.getText()!= ""){
+            viewResultat.setText("");
+        }
     }
     void divisio() {
         operating=true;
         operationType="divisio";
-        viewResultat.setText("");
+        if(viewResultat.getText()!= ""){
+            viewResultat.setText("");
+        }
     }
     String resultat() {
 
         if(operating){
             switch(operationType){
-                case "suma": resultatDeLaOperacio = String.valueOf(Integer.parseInt(resultatConcatenat) + Integer.parseInt(resultatConcatenat2));
+                case "suma": {
+                    operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) + Double.parseDouble(resultatConcatenat2);
+                    if (operadorAuxiliar - Math.floor(operadorAuxiliar)!=0) {
+                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
+                    } else {
+                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
+                    }
+                }
                     break;
-                case "resta": resultatDeLaOperacio = String.valueOf(Integer.parseInt(resultatConcatenat) - Integer.parseInt(resultatConcatenat2));
+                case "resta": {
+                    operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) - Double.parseDouble(resultatConcatenat2);
+                    if (operadorAuxiliar - Math.floor(operadorAuxiliar)!=0) {
+                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
+                    } else {
+                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
+                    }
+                }
                     break;
-                case "multiplicacio": resultatDeLaOperacio = String.valueOf(Integer.parseInt(resultatConcatenat) * Integer.parseInt(resultatConcatenat2));
-                    break;
-                case "divisio": resultatDeLaOperacio = String.valueOf(Integer.parseInt(resultatConcatenat) % Integer.parseInt(resultatConcatenat2));
-                    break;
+                case "multiplicacio": {
+                    operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) * Double.parseDouble(resultatConcatenat2);
+                    if (operadorAuxiliar - Math.floor(operadorAuxiliar)!=0) {
+                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
+                    } else {
+                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
+                    }
+                }
+                break;
+                case "divisio": {
+                    operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) / Double.parseDouble(resultatConcatenat2);
+                    if (operadorAuxiliar - Math.floor(operadorAuxiliar) != 0) {
+                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
+                    } else {
+                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
+                    }
+                }
+                break;
             }
             operating=false;
+            resultatConcatenat2 = "";
             return resultatDeLaOperacio;
         } else {
             return resultatConcatenat;
