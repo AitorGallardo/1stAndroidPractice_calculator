@@ -9,16 +9,16 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    static Button buttonN1, buttonN2, buttonN3, buttonN4, buttonN5, buttonN6, buttonN7, buttonN8, buttonN9, buttonN0;
-    static Button buttonSuma, buttonResta, buttonMultiplicacio, buttonDivisio, buttonResultat, buttonCE;
-    static TextView viewResultat;
+     Button buttonN1, buttonN2, buttonN3, buttonN4, buttonN5, buttonN6, buttonN7, buttonN8, buttonN9, buttonN0;
+     Button buttonSuma, buttonResta, buttonMultiplicacio, buttonDivisio, buttonResultat, buttonCE;
+     TextView viewResultat;
 
-    static String resultatConcatenat = "";
-    static String resultatConcatenat2 = "";
-    static boolean operating = false;
-    static String operationType = "";
-    static String resultatDeLaOperacio = "";
-    static Double operadorAuxiliar;
+
+     String resultatConcatenat2 = "";
+     boolean operating = false;
+     String operationType = "";
+     String resultatDeLaOperacio = "";
+     Double operadorAuxiliar;
 
 
 
@@ -152,23 +152,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             break;
             case R.id.buttonSuma:
-                calcule.suma();
+                suma();
                 break;
             case R.id.buttonResta:
-                calcule.resta();
+                resta();
                 break;
             case R.id.buttonMultiplicacio:
-                calcule.multiplicacio();
+                multiplicacio();
                 break;
             case R.id.buttonDivisio:
-                calcule.divisio();
+                divisio();
                 break;
             // case R.id.buttonResultat:
                //  viewResultat.setText(calcule.resultat());
                 // break;
             case R.id.buttonCE: {
-                resultatDeLaOperacio = null;
-                resultatConcatenat2 = null;
+                resultatDeLaOperacio = "";
+                resultatConcatenat2 = "";
+                operating = false;
                 viewResultat.setText(resultatDeLaOperacio);
             }
             break;
@@ -177,37 +178,43 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-        void checkOperation(){
+        boolean checkOperation(){
 
-    	if(operationType!=null&&resultatDeLaOperacio!=null&&resultatConcatenat2!=null){
-    		operador();
-    	}
+    	if(operationType!=""&&resultatDeLaOperacio!=""&&resultatConcatenat2!=""){
+            operador();
+    	    viewResultat.setText(resultatDeLaOperacio);
+    	    return true;
+    	} else {
+    	    return false;
+        }
     }
 
     void suma() {
 
-    	checkOperation();
+    	boolean didOperate = checkOperation();
 
-        if(resultatDeLaOperacio!=null){
+        if(resultatDeLaOperacio!=""){
             operating = true;
             operationType = "suma";
-            if(resultatConcatenat2!=null){
-            	operador();
-            	resultatConcatenat2=null;
-            }
+/*            if(resultatConcatenat2!=""){
+                operador();
+                viewResultat.setText(resultatDeLaOperacio);
+            	resultatConcatenat2="";
+            }*/
         }
     }
     void resta() {
 
     	checkOperation();
 
-        if(resultatDeLaOperacio!=null){
+        if(resultatDeLaOperacio!=""){
             operating = true;
             operationType = "resta";
-            if(resultatConcatenat2!=null){
-            	operador();
-            	resultatConcatenat2=null;
-            }
+/*            if(resultatConcatenat2!=""){
+                operador();
+                viewResultat.setText(resultatDeLaOperacio);
+            	resultatConcatenat2="";
+            }*/
         }
     }
 
@@ -215,13 +222,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     	checkOperation();
 
-        if(resultatDeLaOperacio!=null){
+        if(resultatDeLaOperacio!=""){
             operating = true;
             operationType = "multiplicacio";
-            if(resultatConcatenat2!=null){
-            	operador();
-            	resultatConcatenat2=null;
-            }
+/*            if(resultatConcatenat2!=""){
+                operador();
+                viewResultat.setText(resultatDeLaOperacio);
+            	resultatConcatenat2="";
+            }*/
         }
     }
 
@@ -229,13 +237,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     	checkOperation();
 
-        if(resultatDeLaOperacio!=null){
+        if(resultatDeLaOperacio!=""){
             operating = true;
             operationType = "divisio";
-            if(resultatConcatenat2!=null){
-            	operador();
-            	resultatConcatenat2=null;
-            }
+/*            if(resultatConcatenat2!=""){
+                operador();
+                viewResultat.setText(resultatDeLaOperacio);
+            	resultatConcatenat2="";
+            }*/
         }
     }
 
@@ -250,7 +259,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } else {
                         resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
                     }
-                    operationType = null;
+                    operationType = "";
                 }
                 break;
                 case "resta": {
@@ -260,7 +269,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } else {
                         resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
                     }
-                    operationType = null;
+                    operationType = "";
                 }
                 break;
                 case "multiplicacio": {
@@ -270,7 +279,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } else {
                         resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
                     }
-                    operationType = null;
+                    operationType = "";
                 }
                 break;
                 case "divisio": {
@@ -280,7 +289,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } else {
                         resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
                     }
-                    operationType = null;
+                    operationType = "";
                 }
                 break;
             }
@@ -303,7 +312,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } else {
                         resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
                     }
-                    operationType = null;
+                    operationType = "";
+                    resultatConcatenat2="";
                 }
                 break;
                 case "resta": {
@@ -313,7 +323,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } else {
                         resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
                     }
-                    operationType = null;
+                    operationType = "";
+                    resultatConcatenat2="";
                 }
                 break;
                 case "multiplicacio": {
@@ -323,7 +334,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } else {
                         resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
                     }
-                    operationType = null;
+                    operationType = "";
+                    resultatConcatenat2="";
                 }
                 break;
                 case "divisio": {
@@ -333,12 +345,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } else {
                         resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
                     }
-                    operationType = null;
+                    operationType = "";
+                    resultatConcatenat2="";
                 }
                 break;
             }
         }
-
     }
 
 
