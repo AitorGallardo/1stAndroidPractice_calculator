@@ -163,9 +163,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.buttonDivisio:
                 divisio();
                 break;
-            // case R.id.buttonResultat:
-               //  viewResultat.setText(calcule.resultat());
-                // break;
+            case R.id.buttonResultat:
+                checkOperation();
+                break;
             case R.id.buttonCE: {
                 resultatDeLaOperacio = "";
                 resultatConcatenat2 = "";
@@ -178,29 +178,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-        boolean checkOperation(){
+        void checkOperation(){
 
     	if(operationType!=""&&resultatDeLaOperacio!=""&&resultatConcatenat2!=""){
             operador();
     	    viewResultat.setText(resultatDeLaOperacio);
-    	    return true;
-    	} else {
-    	    return false;
-        }
+    	}
     }
 
     void suma() {
 
-    	boolean didOperate = checkOperation();
+    	checkOperation();
 
         if(resultatDeLaOperacio!=""){
             operating = true;
             operationType = "suma";
-/*            if(resultatConcatenat2!=""){
-                operador();
-                viewResultat.setText(resultatDeLaOperacio);
-            	resultatConcatenat2="";
-            }*/
         }
     }
     void resta() {
@@ -210,11 +202,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(resultatDeLaOperacio!=""){
             operating = true;
             operationType = "resta";
-/*            if(resultatConcatenat2!=""){
-                operador();
-                viewResultat.setText(resultatDeLaOperacio);
-            	resultatConcatenat2="";
-            }*/
         }
     }
 
@@ -225,11 +212,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(resultatDeLaOperacio!=""){
             operating = true;
             operationType = "multiplicacio";
-/*            if(resultatConcatenat2!=""){
-                operador();
-                viewResultat.setText(resultatDeLaOperacio);
-            	resultatConcatenat2="";
-            }*/
         }
     }
 
@@ -240,11 +222,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(resultatDeLaOperacio!=""){
             operating = true;
             operationType = "divisio";
-/*            if(resultatConcatenat2!=""){
-                operador();
-                viewResultat.setText(resultatDeLaOperacio);
-            	resultatConcatenat2="";
-            }*/
         }
     }
 
@@ -303,7 +280,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     void operador() {
 
-        if (operating) {
             switch (operationType) {
                 case "suma": {
                     operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) + Double.parseDouble(resultatConcatenat2);
@@ -350,7 +326,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             }
-        }
     }
 
 
