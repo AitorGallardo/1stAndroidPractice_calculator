@@ -15,14 +15,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button buttonSuma, buttonResta, buttonMultiplicacio, buttonDivisio, buttonResultat, buttonCE, buttonBack, buttonComma;
     TextView viewResultat;
 
-    String resultatDeLaOperacio = "";
-    boolean firstNumberComma;
-    String resultatConcatenat2 = "";
-    boolean secondNumberComma=false;
-    boolean operating = false;
+    String firstInput_FinalResult = "";
+    boolean firstInputComma = false;
+    String secondInput = "";
+    boolean secondInputComma=false;
+    boolean isOperating = false; // it handles whenever a operation button is pressed and decides when secondInput has to be introduced
     String operationType = "";
     Double operadorAuxiliar;
-    boolean delete = false;
 
 
     @Override
@@ -78,82 +77,192 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.buttonN1: {
-                if (operating) {
-                    viewResultat.setText(resultatConcatenat2 += "1");
+                if (isOperating) {
+                    switch(checkInputSize(secondInput)) {
+						case true: viewResultat.setText(secondInput += "1"); 
+							break;
+						case false: viewResultat.setText(secondInput);
+							break;	
+					}
+
                 } else {
-                    viewResultat.setText(resultatDeLaOperacio += "1");
+				    switch(checkInputSize(firstInput_FinalResult)) {
+				    	case true: viewResultat.setText(firstInput_FinalResult += "1"); 
+				    		break;
+				    	case false: viewResultat.setText(firstInput_FinalResult);
+				    		break;	
+				    }
                 }
             }
             break;
             case R.id.buttonN2: {
-                if (operating) {
-                    viewResultat.setText(resultatConcatenat2 += "2");
+                if (isOperating) {
+                    switch(checkInputSize(secondInput)) {
+						case true: viewResultat.setText(secondInput += "2"); 
+							break;
+						case false: viewResultat.setText(secondInput);
+							break;	
+					}
+
                 } else {
-                    viewResultat.setText(resultatDeLaOperacio += "2");
+				    switch(checkInputSize(firstInput_FinalResult)) {
+				    	case true: viewResultat.setText(firstInput_FinalResult += "2"); 
+				    		break;
+				    	case false: viewResultat.setText(firstInput_FinalResult);
+				    		break;	
+				    }
                 }
             }
             break;
             case R.id.buttonN3: {
-                if (operating) {
-                    viewResultat.setText(resultatConcatenat2 += "3");
+                if (isOperating) {
+                    switch(checkInputSize(secondInput)) {
+						case true: viewResultat.setText(secondInput += "3"); 
+							break;
+						case false: viewResultat.setText(secondInput);
+							break;	
+					}
+
                 } else {
-                    viewResultat.setText(resultatDeLaOperacio += "3");
+				    switch(checkInputSize(firstInput_FinalResult)) {
+				    	case true: viewResultat.setText(firstInput_FinalResult += "3"); 
+				    		break;
+				    	case false: viewResultat.setText(firstInput_FinalResult);
+				    		break;	
+				    }
                 }
             }
             break;
             case R.id.buttonN4: {
-                if (operating) {
-                    viewResultat.setText(resultatConcatenat2 += "4");
+                if (isOperating) {
+                    switch(checkInputSize(secondInput)) {
+						case true: viewResultat.setText(secondInput += "4"); 
+							break;
+						case false: viewResultat.setText(secondInput);
+							break;	
+					}
+
                 } else {
-                    viewResultat.setText(resultatDeLaOperacio += "4");
+				    switch(checkInputSize(firstInput_FinalResult)) {
+				    	case true: viewResultat.setText(firstInput_FinalResult += "4"); 
+				    		break;
+				    	case false: viewResultat.setText(firstInput_FinalResult);
+				    		break;	
+				    }
                 }
             }
             break;
             case R.id.buttonN5: {
-                if (operating) {
-                    viewResultat.setText(resultatConcatenat2 += "5");
+                if (isOperating) {
+                    switch(checkInputSize(secondInput)) {
+						case true: viewResultat.setText(secondInput += "5"); 
+							break;
+						case false: viewResultat.setText(secondInput);
+							break;	
+					}
+
                 } else {
-                    viewResultat.setText(resultatDeLaOperacio += "5");
+				    switch(checkInputSize(firstInput_FinalResult)) {
+				    	case true: viewResultat.setText(firstInput_FinalResult += "5"); 
+				    		break;
+				    	case false: viewResultat.setText(firstInput_FinalResult);
+				    		break;	
+				    }
                 }
             }
             break;
             case R.id.buttonN6: {
-                if (operating) {
-                    viewResultat.setText(resultatConcatenat2 += "6");
+                if (isOperating) {
+                    switch(checkInputSize(secondInput)) {
+						case true: viewResultat.setText(secondInput += "6"); 
+							break;
+						case false: viewResultat.setText(secondInput);
+							break;	
+					}
+
                 } else {
-                    viewResultat.setText(resultatDeLaOperacio += "6");
+				    switch(checkInputSize(firstInput_FinalResult)) {
+				    	case true: viewResultat.setText(firstInput_FinalResult += "6"); 
+				    		break;
+				    	case false: viewResultat.setText(firstInput_FinalResult);
+				    		break;	
+				    }
                 }
             }
             break;
             case R.id.buttonN7: {
-                if (operating) {
-                    viewResultat.setText(resultatConcatenat2 += "7");
+                if (isOperating) {
+                    switch(checkInputSize(secondInput)) {
+						case true: viewResultat.setText(secondInput += "7"); 
+							break;
+						case false: viewResultat.setText(secondInput);
+							break;	
+					}
+
                 } else {
-                    viewResultat.setText(resultatDeLaOperacio += "7");
+				    switch(checkInputSize(firstInput_FinalResult)) {
+				    	case true: viewResultat.setText(firstInput_FinalResult += "7"); 
+				    		break;
+				    	case false: viewResultat.setText(firstInput_FinalResult);
+				    		break;	
+				    }
                 }
             }
             break;
             case R.id.buttonN8: {
-                if (operating) {
-                    viewResultat.setText(resultatConcatenat2 += "8");
+                if (isOperating) {
+                    switch(checkInputSize(secondInput)) {
+						case true: viewResultat.setText(secondInput += "8"); 
+							break;
+						case false: viewResultat.setText(secondInput);
+							break;	
+					}
+
                 } else {
-                    viewResultat.setText(resultatDeLaOperacio += "8");
+				    switch(checkInputSize(firstInput_FinalResult)) {
+				    	case true: viewResultat.setText(firstInput_FinalResult += "8"); 
+				    		break;
+				    	case false: viewResultat.setText(firstInput_FinalResult);
+				    		break;	
+				    }
                 }
             }
             break;
             case R.id.buttonN9: {
-                if (operating) {
-                    viewResultat.setText(resultatConcatenat2 += "9");
+                if (isOperating) {
+                    switch(checkInputSize(secondInput)) {
+						case true: viewResultat.setText(secondInput += "9"); 
+							break;
+						case false: viewResultat.setText(secondInput);
+							break;	
+					}
+
                 } else {
-                    viewResultat.setText(resultatDeLaOperacio += "9");
+				    switch(checkInputSize(firstInput_FinalResult)) {
+				    	case true: viewResultat.setText(firstInput_FinalResult += "9"); 
+				    		break;
+				    	case false: viewResultat.setText(firstInput_FinalResult);
+				    		break;	
+				    }
                 }
             }
             break;
             case R.id.buttonN0: {
-                if (operating) {
-                    viewResultat.setText(resultatConcatenat2 += "0");
+                if (isOperating) {
+                    switch(checkInputSize(secondInput)) {
+						case true: viewResultat.setText(secondInput += "0"); 
+							break;
+						case false: viewResultat.setText(secondInput);
+							break;	
+					}
+
                 } else {
-                    viewResultat.setText(resultatDeLaOperacio += "0");
+				    switch(checkInputSize(firstInput_FinalResult)) {
+				    	case true: viewResultat.setText(firstInput_FinalResult += "0"); 
+				    		break;
+				    	case false: viewResultat.setText(firstInput_FinalResult);
+				    		break;	
+				    }
                 }
             }
             break;
@@ -173,32 +282,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 checkOperation();
                 break;
             case R.id.buttonCE: {
-                resultatDeLaOperacio = "";
-                firstNumberComma=false;
-                resultatConcatenat2 = "";
-                secondNumberComma=false;
-                operating = false;
-                viewResultat.setText(resultatDeLaOperacio);
+                firstInput_FinalResult = "";
+                firstInputComma=false;
+                secondInput = "";
+                secondInputComma=false;
+                isOperating = false;
+                viewResultat.setText(firstInput_FinalResult);
             }
             break;
             case R.id.buttonComma: {
-                if (operating) {
-                    if (secondNumberComma==false) {
-                        if(resultatConcatenat2 != ""){
-                            viewResultat.setText(resultatConcatenat2 += ".");
+                if (isOperating) {
+                    if (secondInputComma==false) {
+                        if(secondInput != ""){
+                            viewResultat.setText(secondInput += ".");
                         } else {
-                            viewResultat.setText(resultatConcatenat2 += "0.");
+                            viewResultat.setText(secondInput += "0.");
                         }
-                        secondNumberComma=true;
+                        secondInputComma=true;
                     }
                 } else {
-                    if (firstNumberComma==false) {
-                        if(resultatDeLaOperacio != ""){
-                            viewResultat.setText(resultatDeLaOperacio += ".");
+                    if (firstInputComma==false) {
+                        if(firstInput_FinalResult != ""){
+                            viewResultat.setText(firstInput_FinalResult += ".");
                         } else {
-                            viewResultat.setText(resultatDeLaOperacio += "0.");
+                            viewResultat.setText(firstInput_FinalResult += "0.");
                         }
-                        firstNumberComma=true;
+                        firstInputComma=true;
                     }
                 }
             }
@@ -209,28 +318,59 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    // BUTTON 0
+
+                case R.id.buttonN0: {
+                if (isOperating) {
+                    viewResultat.setText(secondInput += "0");
+                } else {
+                	if(checkInputSize(firstInput_FinalResult)){
+                		viewResultat.setText(firstInput_FinalResult += "0");
+                	} else { viewResultat.setText(firstInput_FinalResult); } 
+                }
+            }
+
+
+
+    swith(checkInputSize(secondInput)) {
+    	case true: viewResultat.setText(secondInput += "9"); 
+    		break;
+    	case false: viewResultat.setText(secondInput);
+    		break;	
+    }
+
+
+    boolean checkInputSize(String InputSize) {
+
+    	if (InputSize.length() > 30) {
+    		return false;
+    	} else {
+    		return true;
+    	}
+    }
 
     void back() {
 
-        if (resultatConcatenat2.length() > 0) {
+        if (secondInput.length() > 0) {
 
-            resultatConcatenat2 = resultatConcatenat2.substring(0, resultatConcatenat2.length() - 1);
-            viewResultat.setText(resultatConcatenat2);
+            secondInput = secondInput.substring(0, secondInput.length() - 1);
+            viewResultat.setText(secondInput);
         } else {
-            if (operating==false&&resultatDeLaOperacio.length() > 0) {
-                Log.d("K=LOngitud",String.valueOf(resultatDeLaOperacio.length()) );
-                resultatDeLaOperacio = resultatDeLaOperacio.substring(0, resultatDeLaOperacio.length() - 1);
-                viewResultat.setText(resultatDeLaOperacio);
+            if (isOperating==false&&firstInput_FinalResult.length() > 0) {
+                firstInput_FinalResult = firstInput_FinalResult.substring(0, firstInput_FinalResult.length() - 1);
+                viewResultat.setText(firstInput_FinalResult);
             }
         }
 
     }
 
+    // operations
+
     void checkOperation () {
 
-        if (operationType != "" && resultatDeLaOperacio != "" && resultatConcatenat2 != "") {
-            operador();
-            viewResultat.setText(resultatDeLaOperacio);
+        if (operationType != "" && firstInput_FinalResult != "" && secondInput != "") {
+            operationHandler();
+            viewResultat.setText(firstInput_FinalResult);
         }
     }
 
@@ -238,8 +378,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         checkOperation();
 
-        if (resultatDeLaOperacio != "") {
-            operating = true;
+        if (firstInput_FinalResult != "") {
+            isOperating = true;
             operationType = "suma";
         }
     }
@@ -247,8 +387,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         checkOperation();
 
-        if (resultatDeLaOperacio != "") {
-            operating = true;
+        if (firstInput_FinalResult != "") {
+            isOperating = true;
             operationType = "resta";
         }
     }
@@ -257,8 +397,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         checkOperation();
 
-        if (resultatDeLaOperacio != "") {
-            operating = true;
+        if (firstInput_FinalResult != "") {
+            isOperating = true;
             operationType = "multiplicacio";
         }
     }
@@ -267,114 +407,61 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         checkOperation();
 
-        if (resultatDeLaOperacio != "") {
-            operating = true;
+        if (firstInput_FinalResult != "") {
+            isOperating = true;
             operationType = "divisio";
         }
     }
 
-/*    String resultat() {
-
-        if (operating) {
-            switch (operationType) {
-                case "suma": {
-                    operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) + Double.parseDouble(resultatConcatenat2);
-                    if (operadorAuxiliar - Math.floor(operadorAuxiliar) != 0) {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
-                    } else {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
-                    }
-                    operationType = "";
-                }
-                break;
-                case "resta": {
-                    operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) - Double.parseDouble(resultatConcatenat2);
-                    if (operadorAuxiliar - Math.floor(operadorAuxiliar) != 0) {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
-                    } else {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
-                    }
-                    operationType = "";
-                }
-                break;
-                case "multiplicacio": {
-                    operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) * Double.parseDouble(resultatConcatenat2);
-                    if (operadorAuxiliar - Math.floor(operadorAuxiliar) != 0) {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
-                    } else {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
-                    }
-                    operationType = "";
-                }
-                break;
-                case "divisio": {
-                    operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) / Double.parseDouble(resultatConcatenat2);
-                    if (operadorAuxiliar - Math.floor(operadorAuxiliar) != 0) {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
-                    } else {
-                        resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
-                    }
-                    operationType = "";
-                }
-                break;
-            }
-            operating = false;
-            resultatConcatenat2 = "";
-            return resultatDeLaOperacio;
-        } else {
-            return resultatConcatenat;
-        }
-    }*/
-
-    void operador () {
+    void operationHandler () {
 
         switch (operationType) {
             case "suma": {
-                operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) + Double.parseDouble(resultatConcatenat2);
+                operadorAuxiliar = Double.parseDouble(firstInput_FinalResult) + Double.parseDouble(secondInput);
                 if ((operadorAuxiliar - Math.floor(operadorAuxiliar) != 0)||(operadorAuxiliar.intValue()>2147483600)) {
-                    resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
+                    firstInput_FinalResult = String.valueOf(operadorAuxiliar);
                 } else {
-                    resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
+                    firstInput_FinalResult = String.valueOf(operadorAuxiliar.intValue());
                 }
                 operationType = "";
-                resultatConcatenat2 = "";
-                secondNumberComma = false;
+                secondInput = "";
+                secondInputComma = false;
             }
             break;
             case "resta": {
-                operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) - Double.parseDouble(resultatConcatenat2);
+                operadorAuxiliar = Double.parseDouble(firstInput_FinalResult) - Double.parseDouble(secondInput);
                 if ((operadorAuxiliar - Math.floor(operadorAuxiliar) != 0)||(operadorAuxiliar.intValue()>2147483600)) {
-                    resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
+                    firstInput_FinalResult = String.valueOf(operadorAuxiliar);
                 } else {
-                    resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
+                    firstInput_FinalResult = String.valueOf(operadorAuxiliar.intValue());
                 }
                 operationType = "";
-                resultatConcatenat2 = "";
-                secondNumberComma = false;
+                secondInput = "";
+                secondInputComma = false;
             }
             break;
             case "multiplicacio": {
-                operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) * Double.parseDouble(resultatConcatenat2);
+                operadorAuxiliar = Double.parseDouble(firstInput_FinalResult) * Double.parseDouble(secondInput);
                 if ((operadorAuxiliar - Math.floor(operadorAuxiliar) != 0)||(operadorAuxiliar.intValue()>2147483600)) {
-                    resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
+                    firstInput_FinalResult = String.valueOf(operadorAuxiliar);
                 } else {
-                    resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
+                    firstInput_FinalResult = String.valueOf(operadorAuxiliar.intValue());
                 }
                 operationType = "";
-                resultatConcatenat2 = "";
-                secondNumberComma = false;
+                secondInput = "";
+                secondInputComma = false;
             }
             break;
             case "divisio": {
-                operadorAuxiliar = Double.parseDouble(resultatDeLaOperacio) / Double.parseDouble(resultatConcatenat2);
+                operadorAuxiliar = Double.parseDouble(firstInput_FinalResult) / Double.parseDouble(secondInput);
                 if ((operadorAuxiliar - Math.floor(operadorAuxiliar) != 0)||(operadorAuxiliar.intValue()>2147483600)) {
-                    resultatDeLaOperacio = String.valueOf(operadorAuxiliar);
+                    firstInput_FinalResult = String.valueOf(operadorAuxiliar);
                 } else {
-                    resultatDeLaOperacio = String.valueOf(operadorAuxiliar.intValue());
+                    firstInput_FinalResult = String.valueOf(operadorAuxiliar.intValue());
                 }
                 operationType = "";
-                resultatConcatenat2 = "";
-                secondNumberComma = false;
+                secondInput = "";
+                secondInputComma = false;
             }
             break;
         }
