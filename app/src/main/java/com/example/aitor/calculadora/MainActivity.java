@@ -76,278 +76,107 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.buttonN1: {
-                if (isOperating) {
-                    switch(checkInputSize(secondInput)) {
-						case true: viewResultat.setText(secondInput += "1"); 
-							break;
-						case false: viewResultat.setText(secondInput);
-							break;	
-					}
-
-                } else {
-				    switch(checkInputSize(firstInput_FinalResult)) {
-				    	case true: viewResultat.setText(firstInput_FinalResult += "1"); 
-				    		break;
-				    	case false: viewResultat.setText(firstInput_FinalResult);
-				    		break;	
-				    }
-                }
-            }
-            break;
-            case R.id.buttonN2: {
-                if (isOperating) {
-                    switch(checkInputSize(secondInput)) {
-						case true: viewResultat.setText(secondInput += "2"); 
-							break;
-						case false: viewResultat.setText(secondInput);
-							break;	
-					}
-
-                } else {
-				    switch(checkInputSize(firstInput_FinalResult)) {
-				    	case true: viewResultat.setText(firstInput_FinalResult += "2"); 
-				    		break;
-				    	case false: viewResultat.setText(firstInput_FinalResult);
-				    		break;	
-				    }
-                }
-            }
-            break;
-            case R.id.buttonN3: {
-                if (isOperating) {
-                    switch(checkInputSize(secondInput)) {
-						case true: viewResultat.setText(secondInput += "3"); 
-							break;
-						case false: viewResultat.setText(secondInput);
-							break;	
-					}
-
-                } else {
-				    switch(checkInputSize(firstInput_FinalResult)) {
-				    	case true: viewResultat.setText(firstInput_FinalResult += "3"); 
-				    		break;
-				    	case false: viewResultat.setText(firstInput_FinalResult);
-				    		break;	
-				    }
-                }
-            }
-            break;
-            case R.id.buttonN4: {
-                if (isOperating) {
-                    switch(checkInputSize(secondInput)) {
-						case true: viewResultat.setText(secondInput += "4"); 
-							break;
-						case false: viewResultat.setText(secondInput);
-							break;	
-					}
-
-                } else {
-				    switch(checkInputSize(firstInput_FinalResult)) {
-				    	case true: viewResultat.setText(firstInput_FinalResult += "4"); 
-				    		break;
-				    	case false: viewResultat.setText(firstInput_FinalResult);
-				    		break;	
-				    }
-                }
-            }
-            break;
-            case R.id.buttonN5: {
-                if (isOperating) {
-                    switch(checkInputSize(secondInput)) {
-						case true: viewResultat.setText(secondInput += "5"); 
-							break;
-						case false: viewResultat.setText(secondInput);
-							break;	
-					}
-
-                } else {
-				    switch(checkInputSize(firstInput_FinalResult)) {
-				    	case true: viewResultat.setText(firstInput_FinalResult += "5"); 
-				    		break;
-				    	case false: viewResultat.setText(firstInput_FinalResult);
-				    		break;	
-				    }
-                }
-            }
-            break;
-            case R.id.buttonN6: {
-                if (isOperating) {
-                    switch(checkInputSize(secondInput)) {
-						case true: viewResultat.setText(secondInput += "6"); 
-							break;
-						case false: viewResultat.setText(secondInput);
-							break;	
-					}
-
-                } else {
-				    switch(checkInputSize(firstInput_FinalResult)) {
-				    	case true: viewResultat.setText(firstInput_FinalResult += "6"); 
-				    		break;
-				    	case false: viewResultat.setText(firstInput_FinalResult);
-				    		break;	
-				    }
-                }
-            }
-            break;
-            case R.id.buttonN7: {
-                if (isOperating) {
-                    switch(checkInputSize(secondInput)) {
-						case true: viewResultat.setText(secondInput += "7"); 
-							break;
-						case false: viewResultat.setText(secondInput);
-							break;	
-					}
-
-                } else {
-				    switch(checkInputSize(firstInput_FinalResult)) {
-				    	case true: viewResultat.setText(firstInput_FinalResult += "7"); 
-				    		break;
-				    	case false: viewResultat.setText(firstInput_FinalResult);
-				    		break;	
-				    }
-                }
-            }
-            break;
-            case R.id.buttonN8: {
-                if (isOperating) {
-                    switch(checkInputSize(secondInput)) {
-						case true: viewResultat.setText(secondInput += "8"); 
-							break;
-						case false: viewResultat.setText(secondInput);
-							break;	
-					}
-
-                } else {
-				    switch(checkInputSize(firstInput_FinalResult)) {
-				    	case true: viewResultat.setText(firstInput_FinalResult += "8"); 
-				    		break;
-				    	case false: viewResultat.setText(firstInput_FinalResult);
-				    		break;	
-				    }
-                }
-            }
-            break;
-            case R.id.buttonN9: {
-                if (isOperating) {
-                    switch(checkInputSize(secondInput)) {
-						case true: viewResultat.setText(secondInput += "9"); 
-							break;
-						case false: viewResultat.setText(secondInput);
-							break;	
-					}
-
-                } else {
-				    switch(checkInputSize(firstInput_FinalResult)) {
-				    	case true: viewResultat.setText(firstInput_FinalResult += "9"); 
-				    		break;
-				    	case false: viewResultat.setText(firstInput_FinalResult);
-				    		break;	
-				    }
-                }
-            }
-            break;
-            case R.id.buttonN0: {
-                if (isOperating) {
-                    switch(checkInputSize(secondInput)) {
-						case true: viewResultat.setText(secondInput += "0"); 
-							break;
-						case false: viewResultat.setText(secondInput);
-							break;	
-					}
-
-                } else {
-				    switch(checkInputSize(firstInput_FinalResult)) {
-				    	case true: viewResultat.setText(firstInput_FinalResult += "0"); 
-				    		break;
-				    	case false: viewResultat.setText(firstInput_FinalResult);
-				    		break;	
-				    }
-                }
-            }
-            break;
-            case R.id.buttonSuma:
-                suma();
+            case R.id.buttonN1: insertNumber("1");
+            	break;
+            case R.id.buttonN2: insertNumber("2");
+            	break;
+            case R.id.buttonN3: insertNumber("3");
+            	break;
+            case R.id.buttonN4: insertNumber("4");
+            	break;
+            case R.id.buttonN5: insertNumber("5");
+            	break;
+            case R.id.buttonN6: insertNumber("6");
+            	break;
+            case R.id.buttonN7: insertNumber("7");
+           		break;
+            case R.id.buttonN8: insertNumber("8");
+            	break;
+            case R.id.buttonN9: insertNumber("9");
+            	break;
+            case R.id.buttonN0: insertNumber("0");
+            	break;
+            case R.id.buttonSuma: suma();
                 break;
-            case R.id.buttonResta:
-                resta();
+            case R.id.buttonResta: resta();
                 break;
-            case R.id.buttonMultiplicacio:
-                multiplicacio();
+            case R.id.buttonMultiplicacio: multiplicacio();
                 break;
-            case R.id.buttonDivisio:
-                divisio();
+            case R.id.buttonDivisio: divisio();
                 break;
-            case R.id.buttonResultat:
-                checkOperation();
+            case R.id.buttonResultat: checkOperation();
                 break;
-            case R.id.buttonCE: {
-                firstInput_FinalResult = "";
-                firstInputComma=false;
-                secondInput = "";
-                secondInputComma=false;
-                isOperating = false;
-                viewResultat.setText(firstInput_FinalResult);
-            }
-            break;
-            case R.id.buttonComma: {
-                if (isOperating) {
-                    if (secondInputComma==false) {
-                        if(secondInput != ""){
-                            viewResultat.setText(secondInput += ".");
-                        } else {
-                            viewResultat.setText(secondInput += "0.");
-                        }
-                        secondInputComma=true;
-                    }
-                } else {
-                    if (firstInputComma==false) {
-                        if(firstInput_FinalResult != ""){
-                            viewResultat.setText(firstInput_FinalResult += ".");
-                        } else {
-                            viewResultat.setText(firstInput_FinalResult += "0.");
-                        }
-                        firstInputComma=true;
-                    }
-                }
-            }
-            break;
-            case R.id.buttonBack:
-                back();
+            case R.id.buttonCE: deleteAll();
+            	break;
+            case R.id.buttonComma: instertComma();
+            	break;
+            case R.id.buttonBack: back();
                 break;
         }
     }
 
-    // BUTTON 0
 
-                case R.id.buttonN0: {
-                if (isOperating) {
-                    viewResultat.setText(secondInput += "0");
+    //inputs
+
+    void instertComma() {
+
+
+        if (isOperating) {
+            if (secondInputComma==false&&checkInputSize(secondInput)) {
+                if(secondInput != ""){
+                    viewResultat.setText(secondInput += ".");
                 } else {
-                	if(checkInputSize(firstInput_FinalResult)){
-                		viewResultat.setText(firstInput_FinalResult += "0");
-                	} else { viewResultat.setText(firstInput_FinalResult); } 
+                    viewResultat.setText(secondInput += "0.");
                 }
+                secondInputComma=true;
             }
-
-
-
-    swith(checkInputSize(secondInput)) {
-    	case true: viewResultat.setText(secondInput += "9"); 
-    		break;
-    	case false: viewResultat.setText(secondInput);
-    		break;	
+        } else {
+            if (firstInputComma==false&&checkInputSize(firstInput_FinalResult)) {
+                if(firstInput_FinalResult != ""){
+                    viewResultat.setText(firstInput_FinalResult += ".");
+                } else {
+                    viewResultat.setText(firstInput_FinalResult += "0.");
+                }
+                firstInputComma=true;
+            }
+        }         
     }
 
 
-    boolean checkInputSize(String InputSize) {
 
-    	if (InputSize.length() > 30) {
-    		return false;
-    	} else {
-    		return true;
-    	}
-    }
+   	void insertNumber(String number) {
+
+            if (isOperating) {
+			    switch(checkInputSize(secondInput)) {
+					case true: viewResultat.setText(secondInput += number); 
+						break;
+					case false: viewResultat.setText(secondInput);
+						break;	
+				}
+
+			} else {
+			    switch(checkInputSize(firstInput_FinalResult)) {
+			    	case true: viewResultat.setText(firstInput_FinalResult += number); 
+			    		break;
+			    	case false: viewResultat.setText(firstInput_FinalResult);
+			    		break;	
+			    }
+			}
+
+
+   	}
+
+   	// deletes
+
+   	void deleteAll() {
+
+	    firstInput_FinalResult = "";
+	    firstInputComma=false;
+	    secondInput = "";
+	    secondInputComma=false;
+	    isOperating = false;
+	    viewResultat.setText(firstInput_FinalResult);
+   	}
 
     void back() {
 
@@ -364,7 +193,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    // operations
+    //checks
+
+    boolean checkInputSize(String InputSize) {
+
+    	if (InputSize.length() > 30) {
+    		return false;
+    	} else {
+    		return true;
+    	}
+    }
 
     void checkOperation () {
 
@@ -373,6 +211,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             viewResultat.setText(firstInput_FinalResult);
         }
     }
+
+    // operations
 
     void suma () {
 
