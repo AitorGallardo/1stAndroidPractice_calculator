@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     boolean checkInputSize(String InputSize) {
 
-    	if (InputSize.length() > 30) {
+    	if (InputSize.length() >= 30) {
     		return false;
     	} else {
     		return true;
