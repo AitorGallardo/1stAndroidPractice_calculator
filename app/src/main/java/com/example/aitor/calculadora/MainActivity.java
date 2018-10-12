@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.buttonCE: deleteAll();
             	break;
-            case R.id.buttonComma: instertComma();
+            case R.id.buttonComma: insertComma();
             	break;
             case R.id.buttonBack: back();
                 break;
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //inputs
 
-    void instertComma() {
+    void insertComma() {
 
 
         if (isOperating) {
@@ -146,22 +146,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
    	void insertNumber(String number) {
 
-            if (isOperating) {
-			    switch(checkInputSize(secondInput)) {
-					case true: viewResultat.setText(secondInput += number); 
-						break;
-					case false: viewResultat.setText(secondInput);
-						break;	
-				}
-
-			} else {
-			    switch(checkInputSize(firstInput_FinalResult)) {
-			    	case true: viewResultat.setText(firstInput_FinalResult += number); 
-			    		break;
-			    	case false: viewResultat.setText(firstInput_FinalResult);
-			    		break;	
-			    }
-			}
+        if (isOperating) {
+            if(checkInputSize(secondInput)) {
+                viewResultat.setText(secondInput += number);
+            } else {
+                viewResultat.setText(secondInput);
+            }
+        } else {
+            if(checkInputSize(firstInput_FinalResult)) {
+                viewResultat.setText(firstInput_FinalResult += number);
+            } else {
+                viewResultat.setText(firstInput_FinalResult);
+            }
+        }
 
 
    	}
